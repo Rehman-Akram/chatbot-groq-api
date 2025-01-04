@@ -5,8 +5,8 @@ In this repo, I created chatbot using groq api helps to interact with open sourc
 # Stack
 
 1. Python = 3.12
-2. streamlit =
-3. llama3 =
+2. streamlit = 1.41.1
+3. open source llm model = llama-3.3-70b-versatile
 
 # How to use
 
