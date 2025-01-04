@@ -1,26 +1,18 @@
 import os
-import json
-
 import streamlit as st
 from groq import Groq
+from dotenv import load_dotenv
 
-
+load_dotenv()
 # streamlit page configuration
 st.set_page_config(
-    page_title="LLAMA 3.1. Chat",
-    page_icon="🦙",
+    page_title="LLAMA 3.1. ChatBot",
     layout="centered"
 )
 
-working_dir = os.path.dirname(os.path.abspath(__file__))
-config_data = json.load(open(f"{working_dir}/config.json"))
-
-GROQ_API_KEY = config_data["GROQ_API_KEY"]
-
-# save the api key to environment variable
-os.environ["GROQ_API_KEY"] = GROQ_API_KEY
-
-client = Groq()
+client = Groq(
+    api_key=os.getenv("GROQ_API"),
+)
 
 # initialize the chat history as streamlit session state of not present already
 if "chat_history" not in st.session_state:
@@ -28,7 +20,7 @@ if "chat_history" not in st.session_state:
 
 
 # streamlit page title
-st.title("🦙 LLAMA 3.1. ChatBot")
+st.title("Chatbot with Grop API -LLAMA 3.1. Chat")
 
 # display chat history
 for message in st.session_state.chat_history:
@@ -51,7 +43,7 @@ if user_prompt:
     ]
 
     response = client.chat.completions.create(
-        model="llama-3.1-8b-instant",
+        model="llama-3.3-70b-versatile",
         messages=messages
     )
 
