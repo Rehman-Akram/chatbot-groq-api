@@ -20,7 +20,7 @@ if "chat_history" not in st.session_state:
 
 
 # streamlit page title
-st.title("Chatbot with Grop API -LLAMA 3.1. Chat")
+st.title("Chatbot with Groq API -LLAMA 3.1. Chat")
 
 # display chat history
 for message in st.session_state.chat_history:
