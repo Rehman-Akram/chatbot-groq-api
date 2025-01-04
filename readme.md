@@ -1,4 +1,4 @@
-# create chatbot with Groq api
+# Create chatbot with Groq api
 
 In this repo, I created chatbot using groq api helps to interact with open source llms. I used llama3 as open source llm.
 
@@ -16,3 +16,6 @@ In this repo, I created chatbot using groq api helps to interact with open sourc
 4. Create .env file as per sample env .For this you will need to create groq api.
 5. Install packges using command pip install -r src/requirements.txt
 6. Run application using command streamlit run app.py
+
+# Demo
+https://basic-llama3-chatbot.streamlit.app/
